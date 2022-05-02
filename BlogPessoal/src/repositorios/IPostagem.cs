@@ -1,32 +1,23 @@
-using System.ComponentModel.DataAnnotations;
-/// <summary>
-/// <para>Resumo: Classe espelho para criar um novo tema</para>
-/// <para>Criado por: Michelli Cordeiro </para>
-/// <para>Versão: 1.0</para>
-/// <para>Data: 29/04/2022</para>
-/// </summary>
-public class NovoTemaDTO
-    {
-        [Required, StringLength(20)]
-        public string Descricao { get; set; }
-        public NovoTemaDTO(string descricao)
-        {
-            Descricao = descricao;
-        }
-    }
+using BlogPessoal.src.dtos;
+using BlogPessoal.src.modelos;
+using System.Collections.Generic;
 
+namespace BlogPessoal.src.repositorios
+{
     /// <summary>
-    /// <para>Resumo: Classe espelho para alterar um tema</para>
+    /// <para>Resumo: Responsavel por representar ações de CRUD de postagem</para>
     /// <para>Criado por: Michelli Cordeiro </para>
     /// <para>Versão: 1.0</para>
     /// <para>Data: 29/04/2022</para>
     /// </summary>
-    public class AtualizarTemaDTO
+    public interface IPostagem
     {
-        [Required, StringLength(20)]
-        public string Descricao { get; set; }
-        public AtualizarTemaDTO(string descricao)
-        {
-            Descricao = descricao;
-        }
+        void NovaPostagem(NovaPostagemDTO postagem);
+        void AtualizarPostagem(AtualizarPostagemDTO postagem);
+        void DeletarPostagem(int id);
+        PostagemModelo PegarPostagemPeloId(int id);
+        List<PostagemModelo> PegarTodasPostagens();
+        List<PostagemModelo> PegarPostagensPorPesquisa(string titulo, string descricaoTema, string nomeCriador);
+
     }
+}
