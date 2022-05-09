@@ -10,14 +10,13 @@ namespace BlogPessoal.src.repositorios
     /// <para>Versão: 1.0</para>
     /// <para>Data: 29/04/2022</para>
     /// </summary>
-    public interface IPostagem
+        public interface IPostagem
     {
-        void NovaPostagem(NovaPostagemDTO postagem);
-        void AtualizarPostagem(AtualizarPostagemDTO postagem);
-        void DeletarPostagem(int id);
         PostagemModelo PegarPostagemPeloId(int id);
         List<PostagemModelo> PegarTodasPostagens();
         List<PostagemModelo> PegarPostagensPorPesquisa(string titulo, string descricaoTema, string nomeCriador);
-
+        void NovaPostagem(NovaPostagemDTO postagem);
+        void AtualizarPostagem(AtualizarPostagemDTO postagem);
+        void DeletarPostagem(int id);
     }
 }

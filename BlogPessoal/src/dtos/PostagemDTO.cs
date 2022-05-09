@@ -41,6 +41,9 @@ public class NovaPostagemDTO
     /// </summary>
     public class AtualizarPostagemDTO
     {
+        [Required]
+        public int Id { get; set; }
+
         [Required, StringLength(30)]
         public string Titulo { get; set; }
 

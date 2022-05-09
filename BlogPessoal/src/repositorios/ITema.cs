@@ -12,6 +12,8 @@ public interface ITema
         void NovoTema(NovoTemaDTO tema);
         void AtualizarTema(AtualizarTemaDTO tema);
         void DeletarTema(int id);
-        TemaModelo PegarTemaPeloId(int id);
+        TemaModelo PegarTemaPeloId(int Id);
         List<TemaModelo> PegarTemaPelaDescricao(string descricao);
+        List<TemaModelo>PegarTodosTemas(int Id);
+
     }

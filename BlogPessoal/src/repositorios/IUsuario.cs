@@ -1,4 +1,5 @@
- using BlogPessoal.src.dtos;
+using System.Collections.Generic;
+using BlogPessoal.src.dtos;
 using BlogPessoal.src.modelos;
 
 namespace BlogPessoal.src.repositorios   
@@ -12,10 +13,10 @@ namespace BlogPessoal.src.repositorios
     public interface IUsuario
     {
         void NovoUsuario(NovoUsuarioDTO usuario);                
-        void AtualizarUsuario(AtualizarUsuarioDTO usuario);
+        void AtualizarUsuario(AtualizarUsuarioDTO Id);
         void DeletarUsuario(int Id);
         UsuarioModelo PegarUsuarioPeloId (int Id);
-        UsuarioModelo PegarPeloEmail(string email);                
-        UsuarioModelo PegarPeloNome(string email);
+        UsuarioModelo PegarUsuarioPeloEmail(string email);                
+        List<UsuarioModelo> PegarUsuarioPeloNome(string nome);
     }
 }
