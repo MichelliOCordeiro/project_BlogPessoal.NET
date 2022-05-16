@@ -2,9 +2,16 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
+using BlogPessoal.src.utilidades;
 
 namespace BlogPessoal.src.modelos
 {
+    /// <summary>
+    /// <para>Resumo: Classe responsavel por representar tb_usuarios no banco.</para>
+    /// <para>Criado por: Michelli Oliveira</para>
+    /// <para>Versão: 1.0</para>
+    /// <para>Data: 13/05/2022</para>
+    /// </summary>
     [Table("tb_usuarios")]
     public class UsuarioModelo
     {
@@ -26,8 +33,10 @@ namespace BlogPessoal.src.modelos
 
         public string Foto { get; set; }
 
-        [JsonIgnore]
-        public List<PostagemModelo> MinhasPostagens { get; set; }
+        [Required]
+        public TipoUsuario Tipo { get; set; }
 
+        [JsonIgnore, InverseProperty("Criador")]
+        public List<PostagemModelo> MinhasPostagens { get; set; }
     }
 }

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using BlogPessoal.src.dtos;
 using BlogPessoal.src.modelos;
 /// <summary>
@@ -9,11 +10,10 @@ using BlogPessoal.src.modelos;
 /// </summary>
 public interface ITema
     {
-        void NovoTema(NovoTemaDTO tema);
-        void AtualizarTema(AtualizarTemaDTO tema);
-        void DeletarTema(int id);
-        TemaModelo PegarTemaPeloId(int Id);
-        List<TemaModelo> PegarTemaPelaDescricao(string descricao);
-        List<TemaModelo>PegarTodosTemas(int Id);
-
+        Task NovoTemaAsync(NovoTemaDTO tema);
+        Task AtualizarTemaAsync(AtualizarTemaDTO tema);
+        Task DeletarTemaAsync(int id);
+        Task<TemaModelo> PegarTemaPeloIdAsync(int Id);
+        Task<List<TemaModelo>> PegarTemaPelaDescricaoAsync(string descricao);
+        Task<List<TemaModelo>> PegarTodosTemasAsync();
     }

@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using BlogPessoal.src.utilidades;
 
 namespace BlogPessoal.src.dtos
 {
@@ -9,9 +10,9 @@ namespace BlogPessoal.src.dtos
     /// <para>Data: 29/04/2022</para>
     /// </summary> 
     public class NovoUsuarioDTO
-    {  
+    {
         [Required]
-        [StringLength(50)]
+        [StringLength(30)]
         public string Nome { get; set; }
 
         [Required]
@@ -23,19 +24,30 @@ namespace BlogPessoal.src.dtos
         public string Senha { get; set; }
 
         public string Foto { get; set; }
-        public NovoUsuarioDTO(string nome, string email, string senha, string foto)
+
+        [Required]
+        public TipoUsuario Tipo { get; set; }
+        
+    public NovoUsuarioDTO(string nome, string email, string senha, string foto, TipoUsuario tipo)
         {
             Nome = nome;
             Email = email;
             Senha = senha;
-            Foto = foto;            
-        }   
+            Foto = foto;
+            Tipo = tipo;
+        }
     }
+    /// <summary>
+    /// <para>Resumo: Classe espelho para atualizar um usuario</para>
+    /// <para>Criado por: Michelli Cordeiro</para>
+    /// <para>Versão: 1.0</para>
+    /// <para>Data: 15/05/2022</para>
+    /// </summary> 
     public class AtualizarUsuarioDTO
     {
         [Required]
         public int Id { get; set; }
-        
+
         [Required, StringLength(50)]
         public string Nome { get; set; }
 
@@ -43,7 +55,7 @@ namespace BlogPessoal.src.dtos
         public string Senha { get; set; }
 
         public string Foto { get; set; }
-        public AtualizarUsuarioDTO(int id, string nome, string senha, string foto)
+    public AtualizarUsuarioDTO(int id, string nome, string senha, string foto)
         {
             Id = id;
             Nome = nome;
