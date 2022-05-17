@@ -30,7 +30,7 @@
             </summary>
             <returns>ActionResult</returns>
             <response code="200">Lista de temas</response>
-            <response code="204">Lista vasia</response>
+            <response code="204">Lista vazia</response>
         </member>
         <member name="M:BlogPessoal.src.controladores.TemaControlador.PegarTemaPeloIdAsync(System.Int32)">
             <summary>
@@ -133,9 +133,9 @@
             
                  POST /api/Usuarios
                  {
-                    "nome": "Gustavo Boaz",
-                    "email": "gustavo@domain.com",
-                    "senha": "134652",
+                    "nome": "Michelli Cordeiro",
+                    "email": "michelli@gmal.com",
+                    "senha": "1234",
                     "foto": "URLFOTO",
                     "tipo": "NORMAL"
                  }
